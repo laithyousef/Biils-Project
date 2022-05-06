@@ -90,12 +90,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @php
-                                 $i = 0
-                            @endphp
                             @foreach ($data as $key => $user)
                                 <tr>
-                                    <td>{{ ++$i }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>  <a href="{{ route('show_user_roles', $user->id) }}"> {{ $user->name }} </a> </td>
                                     <td>{{ $user->email }}</td>
                                     <td>

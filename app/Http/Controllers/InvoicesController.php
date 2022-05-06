@@ -329,22 +329,22 @@ class InvoicesController extends Controller
      * @param  \App\Models\invoices  $invoices
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id_page)
+    public function destroy(Request $request)
     {
-
         $id = $request->invoice_id;
 
 
-        $invoice_attachments = Invoice_Attachments::where('id_Invoice', $id)->first();
+        if($request->id_page == 2) {
 
-        if($id_page === 2) {
-
-        $invoices = Invoices::find($id)->Delete();
+        $invoices = Invoices::find($id)->delete();
 
         session()->flash('invoice_archive');
         return redirect('invoices');
 
-        } else {
+        } 
+        else {
+
+            $invoice_attachments = Invoice_Attachments::where('id_Invoice', $id)->first();
 
             if (!empty($invoice_attachments->invoice_number)) {
 

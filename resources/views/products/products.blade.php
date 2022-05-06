@@ -99,11 +99,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i = 0; ?>
                                 @foreach ($products as $Product)
-                                    <?php $i++; ?>
                                     <tr>
-                                        <td>{{ $i }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $Product->product_name }}</td>
                                         <td>{{ $Product->section->section_name }}</td>
                                         <td>{{ $Product->description }}</td>

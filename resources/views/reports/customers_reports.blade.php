@@ -122,12 +122,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i = 0; ?>
-
                                 @foreach ($details as $invoice)
-                                    <?php $i++; ?>
                                     <tr>
-                                        <td>{{ $i }}</td>
+                                        <td>{{ $loop->iteration}}</td>
                                         <td>{{ $invoice->invoice_number }} </td>
                                         <td>{{ $invoice->invoice_Date }}</td>
                                         <td>{{ $invoice->Due_date }}</td>

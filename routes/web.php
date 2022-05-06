@@ -61,6 +61,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('unpaid_invoices', [InvoiceDetailsController::class, 'show_unpaid_invoices'])->name('unpaid_invoices');
     Route::get('partial_paid_invoices', [InvoiceDetailsController::class, 'show_partial_paid_invoices'])->name('partial_paid_invoices');
 
+    
     Route::resource('Archive_invoices', InvoicesArchiveController::class, ['except' => ['create','edit','show','store']]);
 
 

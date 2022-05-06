@@ -149,7 +149,7 @@
 											<tr>
                                                 @php   $i ++;  @endphp
 
-                                                <td>{{ $i }}</td>
+                                                <td>{{ $loop->iteration }}</td>
 												<td>{{ $invoice->invoice_number }}</td>
 												<td>{{ $invoice->invoice_Date }}</td>
 												<td>{{ $invoice->Due_date }}</td>
@@ -220,7 +220,7 @@
 
 				</div>
 
-                            <!-- حذف الفاتورة -->
+                    <!-- حذف الفاتورة -->
                 <div class="modal fade" id="delete_invoice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -260,7 +260,7 @@
                             {{ method_field('delete') }}
                             {{ csrf_field() }}
                     </div>
-                    <div class="modal-body">                        هل انت متاكد من عملية الارشفة ؟
+                    <div class="modal-body">        هل انت متاكد من عملية الارشفة ؟
                         <input type="hidden" name="invoice_id" id="invoice_id" value="">
                         <input type="hidden" name="id_page" id="id_page" value="2">
 

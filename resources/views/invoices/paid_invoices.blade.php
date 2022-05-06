@@ -55,15 +55,11 @@
 											</tr>
 										</thead>
 										<tbody>
-                                            @php
-                                                $i = 0
-                                            @endphp
-
+                                    
                                             @foreach ( $invoices as $invoice )
 											<tr>
-                                                @php   $i ++;  @endphp
 
-                                                <td>{{ $i }}</td>
+                                                <td>{{ $loop->iteration }}</td>
 												<td>{{ $invoice->invoice_number }}</td>
 												<td>{{ $invoice->invoice_Date }}</td>
 												<td>{{ $invoice->Due_date }}</td>
