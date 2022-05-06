@@ -77,15 +77,14 @@ class InvoiceAttachmentsController extends Controller
 
     public function showFile($invoice_number, $file_name)
     {
-        $path = Storage::disk('public_uploads') .'/'. $invoice_number/$file_name ;
-        return response()->file($path); 
+        
+        return response()->file(public_path('Attachments/' . '/' . $invoice_number . '/' . $file_name)); 
     }
 
     public function downloadFile($invoice_number, $file_name)
     {
-        $path ="C:/Users/FPCC/Desktop/Bills/public/Attachments/$invoice_number/$file_name";
 
-         return response()->download($path);
+         return response()->download(public_path('Attachments/' . '/' . $invoice_number . '/' . $file_name));
     }
 
 }
