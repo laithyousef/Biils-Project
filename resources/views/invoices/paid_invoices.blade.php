@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section( 'title' , 'الفواتير المدفوعة' )
@@ -23,6 +24,7 @@
 				<!-- breadcrumb -->
 @endsection
 @section('content')
+
 				<!-- row -->
 				<div class="row">
 

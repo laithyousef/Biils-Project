@@ -77,7 +77,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td>1</td>
                                         <td class="tx-12">{{ $invoices->product }}</td>
                                         <td class="tx-center">{{ number_format($invoices->Amount_collection, 2) }}</td>
                                         <td class="tx-right">{{ number_format($invoices->Amount_Commission, 2) }}</td>

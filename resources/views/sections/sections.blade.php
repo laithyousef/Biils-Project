@@ -89,6 +89,7 @@
 												<th class="border-bottom-0">اسم القسم</th>
 												<th class="border-bottom-0">الوصف</th>
                                                 <th class="border-bottom-0">منشئ القسم</th>
+                                                <th class="border-bottom-0"> العمليات</th>
 											</tr>
 										</thead>
 										<tbody>

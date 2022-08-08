@@ -38,14 +38,6 @@ class SectionController extends Controller
     public function store(Request $request)
     {
         $sections = new Section;
-        $request->validate([
-            'section_name' => "required|max:255|unique:sections",
-            'description' => 'required|max:2000'
-        ], [
-            'section_name.unique' => 'هذا الاسم موجود مسبقا',
-            'section_name.required' => 'يرجى إدخال اسم القسم',
-            'description.required' => 'يرجى إدخال البيانات'
-        ]);
             $sections->section_name = $request->section_name ;
             $sections->description = $request->description;
             $sections->created_by = (Auth::user()->name);
@@ -75,15 +67,6 @@ class SectionController extends Controller
     {
         $id = $request->id;
 
-        $request->validate([
-            'section_name' => "required|max:255|unique:sections,section_name,$id",
-            'description' => 'required|max:2000'
-        ], [
-                'section_name.unique' => 'هذا الاسم موجود مسبقا',
-                'section_name.required' => 'يرجى إدخال اسم القسم',
-                'description.required' => 'يرجى إدخال البيانات'
-
-        ]);
         $sections = Section::find($id);
         $sections->update([
             'section_name' => $request->section_name,
